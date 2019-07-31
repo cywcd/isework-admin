@@ -31,7 +31,7 @@ class Login extends React.Component {
         });
     };
     gitHub = () => {
-        window.location.href = 'https://github.com/login/oauth/authorize?client_id=b4f8c86d5f92d9e950d3&redirect_uri=http://localhost:3000/&scope=user&state=iseworkAdmin';
+        window.location.href = 'https://github.com/login/oauth/authorize?client_id=b4f8c86d5f92d9e950d3&redirect_uri=http://localhost:3008/&scope=user&state=iseworkAdmin';
     };
     render() {
         const { getFieldDecorator } = this.props.form;
@@ -39,7 +39,7 @@ class Login extends React.Component {
             <div className="login">
                 <div className="login-form" >
                     <div className="login-logo">
-                        <span>React Admin</span>
+                        <span>ISEWORK Admin</span>
                         <PwaInstaller />
                     </div>
                     <Form onSubmit={this.handleSubmit} style={{maxWidth: '300px'}}>

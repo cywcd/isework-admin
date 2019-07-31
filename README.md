@@ -4,24 +4,72 @@ react+antd+admin 后台管理系统
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### 代码目录
+```js
++-- build/                                  ---打包的文件目录
++-- config/                                 ---npm run eject 后的配置文件目录
++-- node_modules/                           ---npm下载文件目录
++-- public/
+|   --- index.html							---首页入口html文件
+|   --- npm.json							---echarts测试数据
+|   --- weibo.json							---echarts测试数据
++-- src/                                    ---核心代码目录
+|   +-- axios                               ---http请求存放目录
+|   |    --- index.js
+|   +-- components                          ---各式各样的组件存放目录
+|   |    +-- animation                      ---动画组件
+|   |    |    --- ...
+|   |    +-- charts                         ---图表组件
+|   |    |    --- ...
+|   |    +-- dashboard                      ---首页组件
+|   |    |    --- ...
+|   |    +-- forms                          ---表单组件
+|   |    |    --- ...
+|   |    +-- pages                          ---页面组件
+|   |    |    --- ...
+|   |    +-- tables                         ---表格组件
+|   |    |    --- ...
+|   |    +-- ui                             ---ui组件
+|   |    |    --- ...
+|   |    --- BreadcrumbCustom.jsx           ---面包屑组件
+|   |    --- HeaderCustom.jsx               ---顶部导航组件
+|   |    --- Page.jsx                       ---页面容器
+|   |    --- SiderCustom.jsx                ---左边菜单组件
+|   +-- style                               ---项目的样式存放目录，主要采用less编写
+|   +-- utils                               ---工具文件存放目录
+|   --- App.js                              ---组件入口文件
+|   --- index.js                            ---项目的整体js入口文件，包括路由配置等
+--- .env                                    ---启动项目自定义端口配置文件
+--- .eslintrc                               ---自定义eslint配置文件，包括增加的react jsx语法限制
+--- package.json
+```
 
-In the project directory, you can run:
+## 安装运行
 
-### `npm start`
+### 安装依赖
+
+`yarn`
+
+### 启动项目
+
+`npm start`
 
 Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3008](http://localhost:3008) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm test`
+### 测试
+
+`npm test`
 
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### 构建
+
+`npm run build`
 
 Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -31,7 +79,23 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### 生成配置文件
+create-react-app 创建项目,运行eject生成配置文件
+*此操作不可逆
+
+`npm run eject`
+
+运行eject命令报错处理方案：
+主要问题是脚手架添加.gitgnore文件，但是却没有本地仓库
+
+```js
+create-react-app project
+cd project
+git init
+git add .
+git commit -m "saving before ejecting"
+npm run eject
+```
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 

@@ -8,14 +8,14 @@ export const npmDependencies = () => axios.get('./npm.json').then(res => res.dat
 
 export const weibo = () => axios.get('./weibo.json').then(res => res.data).catch(err => console.log(err));
 
-export const gitOauthLogin = () => get({ url: `${config.GIT_OAUTH}/authorize?client_id=792cdcd244e98dcd2dee&redirect_uri=http://localhost:3006/&scope=user&state=reactAdmin` });
+export const gitOauthLogin = () => get({ url: `${config.GIT_OAUTH}/authorize?client_id=b4f8c86d5f92d9e950d3&redirect_uri=http://localhost:3008/&scope=user&state=iseworkAdmin` });
 export const gitOauthToken = code => post({ 
     url: `https://cors-anywhere.herokuapp.com/${config.GIT_OAUTH}/access_token`,
     data: {
-        client_id: '792cdcd244e98dcd2dee',
-        client_secret: '81c4ff9df390d482b7c8b214a55cf24bf1f53059',
-        redirect_uri: 'http://localhost:3006/',
-        state: 'reactAdmin',
+        client_id: 'b4f8c86d5f92d9e950d3',
+        client_secret: '0daa22720d7a35dc1f09e8fb34dbd9a42eefe6df',
+        redirect_uri: 'http://localhost:3008/',
+        state: 'iseworkAdmin',
         code,
     } 
 });
