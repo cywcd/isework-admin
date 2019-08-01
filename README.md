@@ -97,8 +97,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 create-react-app 创建项目,运行eject生成配置文件
 
 `npm run eject`
-
-运行eject命令报错处理方案： 
+  
+运行eject命令报错处理方案：   
 主要问题是脚手架添加.gitgnore文件，但是却没有本地仓库
 
 ```js
@@ -114,26 +114,31 @@ npm run eject
 
 如运行npm run eject报错：Build fails after eject: Cannot find module '@babel/plugin-transform-react-jsx' 
 
-解决方法
-1.删除 node_modules 文件夹 
-2.运行 yarn 
-3.重新 npm start 
+###### 解决方法  
+1.删除 node_modules 文件夹  
+2.运行 yarn  
+3.重新 npm start  
 
 ### 踩坑
 
 使用 create-react-app 创建了 React 项目，并使用 Eject 方式暴露出了 webpack 的配置，并成功按需引入了 antd。
 
-1. 解决 create-react-app 创建项目后 less 不生效的问题
+##### 1.解决 create-react-app 创建项目后 less 不生效的问题
 直接引入less样式不生效，原因是create-react-app 没有内置 less-loader
-
-解决方法
+  
+###### 解决方法
 安装 less 和 less-loader ，并修改 webpack 配置
+  
+###### 1> 安装
+```js
+yarn add less
+```
 
-1> 安装
-`yarn add less`
-`yarn add less-loader`
-
-2> 修改 webpack 配置
+```js
+yarn add less-loader
+```
+  
+###### 2> 修改 webpack 配置
 修改 webpack.config.js 配置文件, 增加less文件配置:
 
 ```js
@@ -157,11 +162,12 @@ npm run eject
 ...
 
 ```
+  
 重启项目后，less样式生效
 
-2. antd 按需引入 less 源文件，以及遇到的 bezierEasing.less 文件报错问题
-
-解决方法
+##### 2.antd 按需引入 less 源文件，以及遇到的 bezierEasing.less 文件报错问题
+  
+###### 解决方法
 修改package.json，将style的值改为true
 
 ```js
@@ -180,14 +186,14 @@ npm run eject
 
 
 ```
-
+  
 重启之后，编译错误，提示 bezierEasing.less 文件的 .bezierEasingMixin() 方法报错：
-
+  
 原因是因为 less v3 之后废弃了 Enable Inline JavaScript Option ：lesscss.org/usage/#less…
-
-主要有2种解决方式
-
-> 将 less 版本降到 3.0 以下
+  
+###### 主要有2种解决方式
+  
+> 将 less 版本降到 3.0 以下  
 > less loader 增加配置，开启 JavaScript ：
 
 ```js
@@ -205,7 +211,7 @@ npm run eject
 
 
 ```
-
+  
 重新 npm start，项目可以正常启动。
 
 
