@@ -190,7 +190,7 @@ npm run eject
 >将 less 版本降到 3.0 以下
 >less loader 增加配置，开启 JavaScript ：
 
-````js
+```js
 
 // webpack.config.js
 ...
@@ -202,6 +202,7 @@ npm run eject
 +    }
     
   }
+
 
 ```
 
