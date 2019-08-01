@@ -4,15 +4,24 @@ react+antd+admin 后台管理系统
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+
+## 项目管理后台界面
+8
+![首页](https://github.com/cywcd/isework-admin/blob/master/preview/index.png)
+9
+​
+10
+![组件](https://github.com/cywcd/isework-admin/blob/master/preview/components.png)
+
+
 ### 代码目录
 ```js
 +-- build/                                  ---打包的文件目录
 +-- config/                                 ---npm run eject 后的配置文件目录
-+-- node_modules/                           ---npm下载文件目录
++-- node_modules/                           ---yarn下载依赖文件目录
 +-- public/
 |   --- index.html							---首页入口html文件
-|   --- npm.json							---echarts测试数据
-|   --- weibo.json							---echarts测试数据
 +-- src/                                    ---核心代码目录
 |   +-- axios                               ---http请求存放目录
 |   |    --- index.js
@@ -29,18 +38,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 |   |    |    --- ...
 |   |    +-- tables                         ---表格组件
 |   |    |    --- ...
-|   |    +-- ui                             ---ui组件
+|   |    +-- UI                             ---ui组件
 |   |    |    --- ...
-|   |    --- BreadcrumbCustom.jsx           ---面包屑组件
-|   |    --- HeaderCustom.jsx               ---顶部导航组件
+|   |    --- BreadcrumbCommon.jsx           ---面包屑组件
+|   |    --- HeaderCommon.jsx               ---顶部导航组件
 |   |    --- Page.jsx                       ---页面容器
-|   |    --- SiderCustom.jsx                ---左边菜单组件
+|   |    --- SiderCommon.jsx                ---左边菜单组件
 |   +-- style                               ---项目的样式存放目录，主要采用less编写
 |   +-- utils                               ---工具文件存放目录
 |   --- App.js                              ---组件入口文件
 |   --- index.js                            ---项目的整体js入口文件，包括路由配置等
 --- .env                                    ---启动项目自定义端口配置文件
---- .eslintrc                               ---自定义eslint配置文件，包括增加的react jsx语法限制
 --- package.json
 ```
 
