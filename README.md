@@ -6,6 +6,7 @@ react+antd+admin 后台管理系统
 
 
 ## 管理后台界面
+![登录](https://github.com/cywcd/isework-admin/blob/master/preview/login.png)
 
 ![首页](https://github.com/cywcd/isework-admin/blob/master/preview/index.png)
 ​

@@ -10,7 +10,7 @@ export default class CRouter extends Component {
     const { auth } = this.props;
     const { permissions } = auth.data;
     // const { auth } = store.getState().httpData;
-    if (!permissions || !permissions.includes(permission)) return <Redirect to={'404'} />;
+    if (!permissions || !permissions.includes(permission)) return <Redirect to={'/404'} />;
     return component;
   };
   requireLogin = (component, permission) => {

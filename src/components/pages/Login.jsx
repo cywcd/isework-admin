@@ -3,6 +3,8 @@ import React from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import { PwaInstaller } from '../widget';
 import { connectAlita } from 'redux-alita';
+import { Particles } from '@blackbox-vision/react-particles';
+import bg from '../../style/imgs/login_bg.png';
 
 const FormItem = Form.Item;
 
@@ -37,6 +39,34 @@ class Login extends React.Component {
         const { getFieldDecorator } = this.props.form;
         return (
             <div className="login">
+              <div className="login-bg">
+                <Particles
+                  id="simple"
+                  width="100%"
+                  height="100vh"
+                  style={{
+                    backgroundColor: 'none',
+                  }}
+                  params={{
+                    particles: {
+                      number: {
+                        value: 50,
+                      },
+                      size: {
+                        value: 3,
+                      },
+                    },
+                    interactivity: {
+                      events: {
+                        onhover: {
+                          enable: true,
+                          mode: 'repulse',
+                        },
+                      },
+                    },
+                  }}
+                />
+              </div>
                 <div className="login-form" >
                     <div className="login-logo">
                         <span>ISEWORK Admin</span>
@@ -62,19 +92,37 @@ class Login extends React.Component {
                                 valuePropName: 'checked',
                                 initialValue: true,
                             })(
-                                <Checkbox>记住我</Checkbox>
+                                <Checkbox style={{color:'#fff'}}>记住我</Checkbox>
                             )}
                             <span className="login-form-forgot" href="" style={{float: 'right'}}>忘记密码</span>
                             <Button type="primary" htmlType="submit" className="login-form-button" style={{width: '100%'}}>
                                 登录
                             </Button>
-                            <p style={{display: 'flex', justifyContent: 'space-between'}}>
+                            <p style={{display: 'flex', justifyContent: 'space-between',color:'#fff'}}>
                                 <span >或 现在就去注册!</span>
-                                <span onClick={this.gitHub} ><Icon type="github" />(第三方登录)</span>
+                                <span onClick={this.gitHub} ><Icon type="github" /> (第三方登录)</span>
                             </p>
                         </FormItem>
                     </Form>
                 </div>
+                <style>{`
+                .login-bg{
+                  width: 100%;
+                  height: 100%;
+                  background-image: url(${bg});
+                  background-size: cover;
+                  background-position: 50% 50%;
+                  background-repeat: no-repeat;
+                  width: 100%;
+                  height: 100%;
+                 position: absolute;
+                 top: 0;
+                 left: 0;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                }
+                `}</style>
             </div>
         );
     }
