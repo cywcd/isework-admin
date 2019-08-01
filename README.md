@@ -98,7 +98,7 @@ create-react-app 创建项目,运行eject生成配置文件
 
 `npm run eject`
 
-运行eject命令报错处理方案：
+运行eject命令报错处理方案： 
 主要问题是脚手架添加.gitgnore文件，但是却没有本地仓库
 
 ```js
@@ -115,9 +115,9 @@ npm run eject
 如运行npm run eject报错：Build fails after eject: Cannot find module '@babel/plugin-transform-react-jsx' 
 
 解决方法
-1.删除 node_modules 文件夹
-2.运行 yarn
-3.重新 npm start
+1.删除 node_modules 文件夹 
+2.运行 yarn 
+3.重新 npm start 
 
 ### 踩坑
 
@@ -187,8 +187,8 @@ npm run eject
 
 主要有2种解决方式
 
->将 less 版本降到 3.0 以下
->less loader 增加配置，开启 JavaScript ：
+> 将 less 版本降到 3.0 以下
+> less loader 增加配置，开启 JavaScript ：
 
 ```js
 
