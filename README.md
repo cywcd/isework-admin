@@ -189,8 +189,8 @@ npm run eject
   
 ###### 主要有2种解决方式
   
-> 将 less 版本降到 3.0 以下  
-> less loader 增加配置，开启 JavaScript ：
+> 1) 将 less 版本降到 3.0 以下  
+> 2) less loader 增加配置，开启 JavaScript ：
 
 ```js
 
