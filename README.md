@@ -57,12 +57,12 @@ react+antd+admin 后台管理系统
 `git clone https://github.com/cywcd/isework-admin.git`
 
 ### 安装依赖
-`yarn or npm i`
+`yarn or npm i`  
 
-推荐使用yarn，安装yarn
-`npm i yarn -g` //全局安装
-`cd isework-admin` //当前项目目录
-`yarn` //yarn安装依赖包
+推荐使用yarn，安装yarn  
+`npm i yarn -g` //全局安装  
+`cd isework-admin` //当前项目目录  
+`yarn` //yarn安装依赖包  
 
 ### 启动项目
 
@@ -130,13 +130,9 @@ npm run eject
 安装 less 和 less-loader ，并修改 webpack 配置
   
 ###### 1> 安装
-```js
-yarn add less
-```
-
-```js
-yarn add less-loader
-```
+`yarn add less`  
+  
+`yarn add less-loader`
   
 ###### 2> 修改 webpack 配置
 修改 webpack.config.js 配置文件, 增加less文件配置:
