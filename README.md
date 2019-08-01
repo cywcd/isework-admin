@@ -2,7 +2,7 @@
 # isework-admin
 react+antd+admin 后台管理系统
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+项目由脚手架create-react-app初始化，趟过了许多坑，下面会分享出来
 
 
 ## 项目管理后台界面
@@ -88,7 +88,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### 生成配置文件
 create-react-app 创建项目,运行eject生成配置文件
-*此操作不可逆
 
 `npm run eject`
 
@@ -104,11 +103,101 @@ git commit -m "saving before ejecting"
 npm run eject
 ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**注: 此操作不可逆
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+如运行npm run eject报错：Build fails after eject: Cannot find module '@babel/plugin-transform-react-jsx' 
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+解决方法
+1.删除 node_modules 文件夹
+2.运行 yarn
+3.重新 npm start
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 踩坑
+
+使用 create-react-app 创建了 React 项目，并使用 Eject 方式暴露出了 webpack 的配置，并成功按需引入了 antd。
+
+1. 解决 create-react-app 创建项目后 less 不生效的问题
+直接引入less样式不生效，原因是create-react-app 没有内置 less-loader
+
+解决方法
+安装 less 和 less-loader ，并修改 webpack 配置
+
+1> 安装
+`yarn add less`
+`yarn add less-loader`
+
+2> 修改 webpack 配置
+修改 webpack.config.js 配置文件, 增加less文件配置:
+
+```js
+
+...
+  {
+    test: /\.less$/,
+    use: [
+      require.resolve('style-loader'),
+      {
+        loader: require.resolve('css-loader'),
+        options: {
+          importLoaders: 1,
+        },
+      },
+      {
+        loader: require.resolve('less-loader') // compiles Less to CSS
+      }
+    ],
+  },
+...
+
+```
+重启项目后，less样式生效
+
+2. antd 按需引入 less 源文件，以及遇到的 bezierEasing.less 文件报错问题
+
+解决方法
+修改package.json，将style的值改为true
+
+```js
+
+...
+  "babel": {
+    "presets": [
+      "react-app"
+     ]
+     ],
+    "plugins": [
+      ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }]
+    ]
+  }
+...
+
+
+```
+
+重启之后，编译错误，提示 bezierEasing.less 文件的 .bezierEasingMixin() 方法报错：
+
+原因是因为 less v3 之后废弃了 Enable Inline JavaScript Option ：lesscss.org/usage/#less…
+
+主要有2种解决方式
+
+>将 less 版本降到 3.0 以下
+>less loader 增加配置，开启 JavaScript ：
+
+````js
+
+// webpack.config.js
+...
+  {
+-    loader: require.resolve('less-loader') // compiles Less to CSS
++    loader: require.resolve('less-loader'), // compiles Less to CSS
++    options: {
++        javascriptEnabled: true
++    }
+    
+  }
+
+```
+
+重新 npm start，项目可以正常启动。
+
 
