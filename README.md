@@ -5,12 +5,10 @@ react+antd+admin 后台管理系统
 项目由脚手架create-react-app初始化，趟过了许多坑，下面会分享出来
 
 
-## 项目管理后台界面
-8
+## 管理后台界面
+
 ![首页](https://github.com/cywcd/isework-admin/blob/master/preview/index.png)
-9
 ​
-10
 ![组件](https://github.com/cywcd/isework-admin/blob/master/preview/components.png)
 
 
@@ -25,37 +23,46 @@ react+antd+admin 后台管理系统
 |   +-- axios                               ---http请求存放目录
 |   |    --- index.js
 |   +-- components                          ---各式各样的组件存放目录
-|   |    +-- animation                      ---动画组件
-|   |    |    --- ...
-|   |    +-- charts                         ---图表组件
-|   |    |    --- ...
 |   |    +-- dashboard                      ---首页组件
 |   |    |    --- ...
-|   |    +-- forms                          ---表单组件
-|   |    |    --- ...
-|   |    +-- pages                          ---页面组件
-|   |    |    --- ...
-|   |    +-- tables                         ---表格组件
+|   |    +-- common                         ---通用组件
 |   |    |    --- ...
 |   |    +-- UI                             ---ui组件
 |   |    |    --- ...
+|   |    +-- tables                         ---表格组件
+|   |    |    --- ...
+|   |    +-- forms                          ---表单组件
+|   |    |    --- ...
+|   |    +-- charts                         ---图表组件
+|   |    |    --- ...
+|   |    +-- animation                      ---动画组件
+|   |    |    --- ...
+|   |    +-- auth                          ---权限管理
+|   |    |    --- ...
 |   |    --- BreadcrumbCommon.jsx           ---面包屑组件
 |   |    --- HeaderCommon.jsx               ---顶部导航组件
-|   |    --- Page.jsx                       ---页面容器
+|   |    --- home.js                        ---页面容器
 |   |    --- SiderCommon.jsx                ---左边菜单组件
 |   +-- style                               ---项目的样式存放目录，主要采用less编写
 |   +-- utils                               ---工具文件存放目录
 |   --- App.js                              ---组件入口文件
-|   --- index.js                            ---项目的整体js入口文件，包括路由配置等
+|   --- index.js                            ---项目主入口js文件，包括路由配置等
 --- .env                                    ---启动项目自定义端口配置文件
 --- package.json
 ```
 
 ## 安装运行
 
-### 安装依赖
+###下载或克隆项目源码
+`git clone https://github.com/cywcd/isework-admin.git`
 
-`yarn`
+### 安装依赖
+`yarn or npm i`
+
+推荐使用yarn，安装yarn
+`npm i yarn -g` //全局安装
+`cd isework-admin` //当前项目目录
+`yarn` //yarn安装依赖包
 
 ### 启动项目
 
