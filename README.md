@@ -19,7 +19,7 @@ react+antd+admin 后台管理系统
 +-- config/                                 ---npm run eject 后的配置文件目录
 +-- node_modules/                           ---yarn下载依赖文件目录
 +-- public/
-|   --- index.html							---首页入口html文件
+|   --- index.html							            ---首页入口html文件
 +-- src/                                    ---核心代码目录
 |   +-- axios                               ---http请求存放目录
 |   |    --- index.js

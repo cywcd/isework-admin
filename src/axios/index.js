@@ -1,12 +1,7 @@
-import axios from 'axios';
 import { get, post } from './tools';
 import * as config from './config';
 
 export const getBbcNews = () => get({ url: config.NEWS_BBC });
-
-export const npmDependencies = () => axios.get('./npm.json').then(res => res.data).catch(err => console.log(err));
-
-export const weibo = () => axios.get('./weibo.json').then(res => res.data).catch(err => console.log(err));
 
 export const gitOauthLogin = () => get({ url: `${config.GIT_OAUTH}/authorize?client_id=b4f8c86d5f92d9e950d3&redirect_uri=http://localhost:3008/&scope=user&state=iseworkAdmin` });
 export const gitOauthToken = code => post({ 
