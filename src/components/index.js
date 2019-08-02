@@ -5,8 +5,9 @@ import Dashboard from './dashboard/Dashboard';
 import Loading from './widget/Loading';
 import AuthBasic from './auth/Basic';
 import RouterEnter from './auth/RouterEnter';
-import Buttons from './UI/Buttons';
-import Icons from './UI/Icons';
+import Buttons from './common/Buttons';
+import Icons from './common/Icons';
+import Swiper from './UI/Swiper';
 import Wysiwyg from './UI/Wysiwyg';
 import QRCode from './UI/QRCode';
 import Amap from './UI/Amap';
@@ -30,5 +31,5 @@ import ExampleAnimations from './animation/ExampleAnimations';
 
 
 export default {
-  Dashboard, Loading, AuthBasic, RouterEnter, Buttons, Icons, Wysiwyg, QRCode, Amap,Drag, Color, SplitPane, ImageCrop, Clipboard, HighlightWords, BasicTable, AdvancedTable, RemoteTable, DynamicControlTable, BasicForm, VariousForm, ComplexForm, Echarts, Recharts, BasicAnimations, ExampleAnimations
+  Dashboard, Loading, AuthBasic, RouterEnter, Buttons, Icons, Swiper, Wysiwyg, QRCode, Amap,Drag, Color, SplitPane, ImageCrop, Clipboard, HighlightWords, BasicTable, AdvancedTable, RemoteTable, DynamicControlTable, BasicForm, VariousForm, ComplexForm, Echarts, Recharts, BasicAnimations, ExampleAnimations
 }

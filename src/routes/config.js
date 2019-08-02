@@ -27,6 +27,10 @@ export default {
     title: '组件',
     icon: 'gateway',
     subs: [{
+        key: '/app/components/swiper',
+        title: '轮播图',
+        component: 'Swiper'
+      },{
         key: '/app/components/wysiwyg',
         title: '富文本',
         component: 'Wysiwyg'
